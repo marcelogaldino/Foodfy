@@ -12,6 +12,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* === HEADER === */
+
 header {
     display: flex;
 }
@@ -32,6 +34,8 @@ header a {
     margin-right: 30px;
     color: #111111;
 }
+
+/* === COVER === */
 
 .cover {
     max-width: 940px;
@@ -69,6 +73,8 @@ section div h3 {
     line-height: 28px;
 }
 
+/* === CARDS === */
+
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -93,6 +99,8 @@ section div h3 {
     color: #777777;
 }
 
+/* === FOOTER === */
+
 .footer {
     background: #EEEEEE;
     width: 100%;
@@ -108,3 +116,22 @@ footer p {
     padding: 20px 0;
 }
 
+/* === ABOUT === */
+
+.title-h2 {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 50px 0 20px 0;
+}
+
+.title-h3 {
+    font-size: 20px;
+    margin: 30px 0 20px 0;
+}
+
+.content-p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin-bottom: 50px;
+}
