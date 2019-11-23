@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body {
+    position: relative;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -86,15 +90,16 @@ section div h3 {
     width: 300px;
     height: 140px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
-#card__name {
+.card__name {
     font-size: 18px;
     line-height: 21px;
     padding: 20px 0 5px 0;
 }
 
-#card__author {
+.card__author {
     font-size: 14px;
     color: #777777;
 }
@@ -134,4 +139,54 @@ footer p {
     line-height: 28px;
     color: #444444;
     margin-bottom: 50px;
+}
+
+/* === MODAL === */
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal__box {
+    background-color: white;
+    width: 660px;
+    height: 413px;
+    margin: 150px 420px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.modal__img {
+    max-width: 600px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    margin: 30px auto;
+}
+
+.modal__close a {
+    cursor: pointer;
+}
+
+/* === MODAL ACTIVE === */
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__close {
+    font-size: 16px;
+    color: #999999;
+    margin-top: 40px;
 }
