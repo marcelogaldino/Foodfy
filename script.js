@@ -1,19 +1,21 @@
-const modal = document.querySelector('.modal')
-const cards = document.querySelectorAll(".card__items")
-const close = document.querySelector("#close__text")
+const modal__overlay = document.querySelector(".modal__overlay")
+const clicks = document.querySelectorAll(".click")
 
-for (let card of cards) {
-    card.addEventListener("click", function() {
-        const imageName = card.getAttribute("id")
-        const name = card.querySelector(".card__name").innerHTML
-        const author = card.querySelector(".card__author").innerHTML
-        modal.classList.add("active")
-        modal.querySelector("img").src=`/assets/${imageName}`
-        modal.querySelector(".card__name").innerHTML= name
-        modal.querySelector(".card__author").innerHTML= author
+for (let click of clicks) {
+    click.addEventListener("click", function() {
+        const imageName = click.getAttribute("id")
+        const descImage = click.querySelector("h4").innerHTML
+        const descAuthor = click.querySelector("p").innerHTML
+        modal__overlay.classList.add("active")
+        modal__overlay.querySelector("img").src=`/assets/${imageName}`
+        modal__overlay.querySelector("h4").innerHTML = descImage
+        modal__overlay.querySelector("p").innerHTML = descAuthor
     })
 }
 
-close.addEventListener("click", function() {
-    modal.classList.remove("active")
+
+
+
+modal__overlay.querySelector("a").addEventListener("click", function() {
+    modal__overlay.classList.remove("active")
 })
