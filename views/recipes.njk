@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+{% block title %} 
+    <title>Recipes - Foodfy</title>
+{% endblock %}
+
+<main class="content">
+    <div class="cards">
+        
+        <div class="click" id="burger.png">
+            <img src="{{ item.image }}" alt="{{ item.title }}">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.author }}</p>
+        </div>
+
+</div>
+</main>
+
+{% endblock %}
