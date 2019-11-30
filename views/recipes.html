@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Foodfy</title>
-</head>
-<body>
-    <div class="wrapper">
-        
-        <header>
-            <a href="/index.html">
-                <img src="/assets/logo.png" alt="Foodfy">
-            </a>
-            <div class="menu">
-                <a href="/about.html">Sobre</a>
-                <a href="/recipes.html">Receitas</a>
-            </div>
-        </header>
-            
+{% extends "layout.html" %}
+
+{% block content %}
+
         <main class="content">
             <div class="cards">
                 
@@ -100,26 +80,4 @@
         </div>
         </main>
 
-    </div>
-
-    <footer>
-        <p>Todos direitos reservados, receitas Foodfy.</p>
-    </footer>
-
-    <div class="modal__overlay">
-        <div class="modal">
-            <div class="modal__content">
-                <div class="card">
-                    <img src="" alt="Triplo bacon burguer">
-                    <h4></h4>
-                    <p></p>
-
-                    <a href="#">Fechar modal</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+{% endblock %}
