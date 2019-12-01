@@ -1,21 +1,57 @@
 {% extends "layout.njk" %}
 
-{% block content %}
-
 {% block title %} 
     <title>Recipes - Foodfy</title>
 {% endblock %}
 
+{% block content %}
+
 <main class="content">
-    <div class="cards">
+    <div class="recipe">
         
-        <div class="click" id="burger.png">
+        <div class="info__recipe" id="burger.png">
             <img src="{{ item.image }}" alt="{{ item.title }}">
-            <h4>{{ item.title }}</h4>
-            <p>{{ item.author }}</p>
+            
+            <div class="title__recipe">
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.author }}</p>
+            </div>
+            
+            <div class="description__recipe">
+                <h5>Ingredientes</h5>
+                <sub id="recipe">ESCONDER</sub>
+            </div>
+            
+            <ul>
+                {% for ingredient in item.ingredients %}
+                    <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+            
+            <div class="description__prepare">
+                <h5>Modo de preparo</h5>
+                <sub id="prepare">ESCONDER</sub>
+            </div>
+
+            <ul id="preparation">
+                {% for preparation in item.preparation %}
+                    <li>{{ preparation }}</li>
+                {% endfor %}
+            </ul>
+            
+            <div class="description__information">
+                <h5>Informacoes adicionais</h5>
+                <sub id=information>ESCONDER</sub>
+            </div>
+            <p id="info" class="desc__p">{{ item.information | striptags(true) | escape | nl2br }}</p>
+
         </div>
 
 </div>
 </main>
+
+{% block script %} 
+    <script src="/script.js"></script>
+{% endblock %}
 
 {% endblock %}

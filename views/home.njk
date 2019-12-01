@@ -28,7 +28,7 @@
         
         {% for item in items %}
         
-        <div class="card__item">
+        <div class="card__item" id="{{ items.indexOf(item) }}">
             <img src="{{ item.image }}" alt="{{ item.title }}">
             <h4>{{ item.title }}</h4>
             <p>{{ item.author }}</p>
@@ -39,6 +39,8 @@
 </div>
 </main>
 
-<script src="/script.js"></script>
+{% block script %} 
+    <script src="/script.js"></script>
+{% endblock %}
 
 {% endblock %}

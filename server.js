@@ -27,12 +27,9 @@ server.get("/recipes/:index", function(req, res) {
     
     if ( recipeIndex >= dataRecipes.length) {
         res.send("Recipe not found :(")
-    } else {
-        if ( dataRecipes.indexOf(recipeIndex) ) {
+    } else if ( dataRecipes.indexOf(recipeIndex) ) {
             res.render("recipes", { item: dataRecipes[recipeIndex] })
         }
-    }
-    
 })
 
 server.listen(3000, function(req, res) {
