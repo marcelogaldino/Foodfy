@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-Foodfy | Learn recipes created by professional chefs form all over the world!
+Foodfy | Learn recipes created by professional chefs from all over the world!
 
 <br>
 <br>
