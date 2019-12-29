@@ -1,0 +1,82 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+    <form action="/admin/recipes/" method="POST">
+        <div class="second-header">
+            <h2>Criando Receita</h2>
+            
+            <button class="primary_button" type="submit">Salvar receita</button>
+        </div>
+        
+        <section class="details">
+
+            <div>
+                <h4>Imagem da receita</h4>
+                <input 
+                type="text"
+                name="recipe_image"
+                placeholder="Insira aqui o link da sua imagem"
+                >
+            </div>
+
+            <div>
+                <h4>Titulo da receita</h4>
+                <input 
+                type="text"
+                name="title"
+                placeholder=""
+                >
+            </div>
+
+            <div>
+                <h4>Autor da receita</h4>
+                <input 
+                type="text"
+                name="author"
+                placeholder=""
+                >
+            </div>
+
+            <div id=ingredients>
+                <h4>Ingredientes</h4>
+                <div class="add_ingredient">
+                    <input 
+                    type="text"
+                    value=""
+                    name="ingredients[]"
+                    >
+                </div>
+            </div>
+            <a class="insert_ingredient">Adicionar novo ingrediente</a>
+
+
+            <div id=prepare>
+                <h4>Modo de preparo</h4>
+                <div class="add_prepare">
+                    <input 
+                    type="text"
+                    value=""
+                    name="prepare[]"
+                    >
+                </div>
+            </div>
+            <a class="insert_prepare">Novo passo</a>
+
+
+            <div>
+                <h4>Informacoes adicionais</h4>
+                <input 
+                id="adicionais" 
+                type="text"
+                name="further_information"    
+                >
+            </div>
+        </section>
+    </form>
+
+    {% block script %} 
+        <script src="/insert-script.js"></script>
+    {% endblock %}
+
+{% endblock content %} 

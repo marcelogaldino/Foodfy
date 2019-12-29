@@ -1,0 +1,59 @@
+{
+  "recipes": [
+    {
+      "recipe_image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png",
+      "title": "Lasanha",
+      "author": "Marcelo Galdino",
+      "ingredients": [
+        [
+          "massa",
+          "massa de tomate"
+        ]
+      ],
+      "prepare": [
+        [
+          "asjdhaksjdhasd",
+          "qoiwueoiqwueoiqw"
+        ]
+      ],
+      "further_information": "aasdasdawawasssssssssssssssssss"
+    },
+    {
+      "recipe_image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/doce.png",
+      "title": "Docinhos pão-do-céu",
+      "author": "Ricardo Golvea",
+      "ingredients": [
+        [
+          "1 kg de batata - doce"
+        ]
+      ],
+      "prepare": [
+        [
+          "Cozinhe a batata-doce numa panela de pressão, com meio litro de água, por cerca de 20 minutos. Descasque e passe pelo espremedor, ainda quente."
+        ]
+      ],
+      "further_information": "Sem informações adicionais"
+    },
+    {
+      "recipe_image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/asinha.png",
+      "title": "Asinhas de frango ao barbecue",
+      "author": "Vania Steroski",
+      "ingredients": [
+        [
+          "12 encontros de asinha de galinha, temperados a gosto",
+          "2 colheres de sopa de farinha de trigo",
+          "1/2 xícara (chá) de óleo",
+          "1 xícara de molho barbecue"
+        ]
+      ],
+      "prepare": [
+        [
+          "Em uma tigela coloque o encontro de asinha de galinha e polvilhe a farinha de trigo e misture com as mãos.",
+          "Em uma frigideira ou assador coloque o óleo quando estiver quente frite até ficarem douradas.",
+          "Para servir fica bonito com salada, ou abuse da criatividade."
+        ]
+      ],
+      "further_information": "Sem infos adicionais"
+    }
+  ]
+}

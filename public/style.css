@@ -14,7 +14,7 @@ body {
     margin: 32px auto;
 }
 
-header {
+.header-layout {
     margin: 32px 0;
     display: grid;
     grid-template-columns: 210px 1fr;
@@ -79,6 +79,7 @@ a {
     width: 100%;
     gap: 20px;
 }
+
 
 .click {
     cursor: pointer;
@@ -226,7 +227,7 @@ main section h1 {
     max-width: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-columns: 136px auto;
+    grid-template-columns: 136px 70px;
     align-items: end;
     margin-bottom: 20px;
 }
@@ -256,7 +257,7 @@ ul {
     max-width: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-columns: 184px auto;
+    grid-template-columns: 184px 70px;
     align-items: end;
     margin-bottom: 20px;
 }
@@ -272,7 +273,149 @@ ul {
     max-width: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-columns: 253px auto;
+    grid-template-columns: 253px 70px;
     align-items: end;
     margin-bottom: 20px;
 }
+
+.description__recipe #recipe,
+.description__prepare #prepare,
+.description__information #information {
+    cursor: pointer;
+}
+
+/* === ADMIN RECIPES ==== */
+
+.header-admin {
+    background-color: #111111;
+    width: 100%;
+    height: 78px;
+}
+
+.header-admin a img {
+    margin: 27px 0 27px 295px;
+}
+
+.cards h2 {
+    margin-top: 50px;
+}
+
+.card__item-admin {
+    margin-top: 30px;
+    display: inline-flex;
+}
+
+.cards-admin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px;
+}
+
+.cards-admin img {
+    width: 172px;
+    border-radius: 8.57px;
+}
+
+.info-admin {
+    margin-left: 20px;
+    display: grid;
+}
+
+.content .cards-admin p {
+    font-size: 14px;
+    color: #777777;
+    margin-top: 5px;
+}
+
+.content .cards-admin a {
+    color: #6558C3;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* === ADMIN CREATE === */
+
+.second-header {
+    display: flex;
+}
+
+.second-header h2 {
+    font-size: 24px;
+}
+
+.primary_button {
+    margin-left: 626px;
+    background: #6558C3;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    width: 139px;
+    height: 37px;
+    cursor: pointer;
+}
+
+/* .primary_button a {
+    background-color: #6558C3;
+} */
+
+.show_top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.show_top h4 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.show_top a {
+    background-color: #6558C3;
+    color: white;
+    padding: 9px 20px;
+    border-radius: 5px;
+    margin-left: 330px;
+}
+
+
+.details h4 {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 30px 0 10px 0;
+}
+
+input[type="text"] {
+    width: 940px;
+    height: 49px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#adicionais {
+    height: 257px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.details div:nth-child(2) input[type="text"],
+.details div:nth-child(3) input[type="text"] {
+    margin-bottom: 15px;
+}
+
+.details a {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6558C3;
+    cursor: pointer;
+}
+
