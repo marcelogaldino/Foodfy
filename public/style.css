@@ -183,6 +183,10 @@ main section h1 {
     margin: 30px 0 20px 0;
 }
 
+.about {
+    display: block;
+}
+
 .text {
     margin-bottom: 30px;
     font-size: 18px;
@@ -342,11 +346,11 @@ ul {
 }
 
 .second-header h2 {
-    font-size: 24px;
+    width: 180px;
 }
 
 .primary_button {
-    margin-left: 626px;
+    margin-left: 32px;
     background: #6558C3;
     border-radius: 4px;
     border: none;
@@ -354,6 +358,10 @@ ul {
     width: 139px;
     height: 37px;
     cursor: pointer;
+}
+
+#primary_button {
+    margin-left: 640px;
 }
 
 /* .primary_button a {
@@ -406,6 +414,10 @@ input::placeholder {
     font-weight: normal;
 }
 
+.details {
+    display: block;
+}
+
 .details div:nth-child(2) input[type="text"],
 .details div:nth-child(3) input[type="text"] {
     margin-bottom: 15px;
@@ -419,3 +431,29 @@ input::placeholder {
     cursor: pointer;
 }
 
+/* .buttonsForm section #put {
+    display: grid;
+    grid-template-columns: 1fr;
+} */
+
+section {
+    display: inline-flex;
+}
+
+section h2 {
+    width: 180px;
+}
+
+#delete {
+    margin-left: 450px;
+}
+
+#delete button {
+    background: rgb(228, 87, 87);
+    border-radius: 4px;
+    border: none;
+    color: white;
+    width: 139px;
+    height: 37px;
+    cursor: pointer;
+}

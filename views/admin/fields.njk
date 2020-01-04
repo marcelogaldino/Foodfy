@@ -1,26 +1,4 @@
-{% extends "admin/layout.njk" %}
-
-{% block content %}
-
-    <div class="buttonsForm"> 
-
-        <section>
-            <h2>Editando receita</h2>
-            
-            <form id="delete" method="post" action="/admin/recipes?_method=DELETE">
-                <input type="hidden" name="id" value="{{ item.id }}">
-                <button type="submit">Deletar</button>
-            </form>
-
-            <form id="put" method="POST" action="/admin/recipes?_method=PUT">
-                <div class="second-header">
-                <input type="hidden" name="id" value="{{ item.id }}">    
-                <button class="primary_button" type="submit">Salvar receita</button>
-        </section>
-                </div>
-        
-        
-        <section class="details">
+<section class="details">
 
             <div>
                 <h4>Imagem da receita</h4>
@@ -28,7 +6,6 @@
                 type="text"
                 name="recipe_image"
                 placeholder="Insira aqui o link da sua imagem"
-                value="{{ item.recipe_image }}"
                 >
             </div>
 
@@ -37,7 +14,7 @@
                 <input 
                 type="text"
                 name="title"
-                value="{{ item.title }}"
+                placeholder=""
                 >
             </div>
 
@@ -46,7 +23,7 @@
                 <input 
                 type="text"
                 name="author"
-                value="{{ item.author }}"
+                placeholder=""
                 >
             </div>
 
@@ -55,8 +32,8 @@
                 <div class="add_ingredient">
                     <input 
                     type="text"
-                    name="ingredients"
-                    value="{{ item.ingredients }}"
+                    value=""
+                    name="ingredients[]"
                     >
                 </div>
             </div>
@@ -68,8 +45,8 @@
                 <div class="add_prepare">
                     <input 
                     type="text"
-                    name="prepare"
-                    value="{{ item.prepare }}"
+                    value=""
+                    name="prepare[]"
                     >
                 </div>
             </div>
@@ -81,20 +58,7 @@
                 <input 
                 id="adicionais" 
                 type="text"
-                name="further_information"
-                value="{{ item.further_information }}"
+                name="further_information"    
                 >
             </div>
-
         </section>
-                
-            </form>
-
-    </div>
-    
-
-    {% block script %} 
-        <script src="/insert-script.js"></script>
-    {% endblock %}
-
-{% endblock content %} 

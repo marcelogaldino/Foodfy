@@ -10,7 +10,7 @@
     <div class="recipe">
         
         <div class="info__recipe" id="burger.png">
-            <img src="{{ item.image }}" alt="{{ item.title }}">
+            <img src="{{ item.recipe_image }}" alt="{{ item.title }}">
             
             <div class="title__recipe">
                 <h4>{{ item.title }}</h4>
@@ -35,7 +35,7 @@
 
             <ul id="preparation">
                 {% for preparation in item.preparation %}
-                    <li>{{ preparation }}</li>
+                    <li>{{ prepare }}</li>
                 {% endfor %}
             </ul>
             
@@ -43,7 +43,7 @@
                 <h5>Informacoes adicionais</h5>
                 <sub id=information>ESCONDER</sub>
             </div>
-            <p id="info" class="desc__p">{{ item.information | striptags(true) | escape | nl2br }}</p>
+            <p id="info" class="desc__p">{{ item.further_information | striptags(true) | escape | nl2br }}</p>
 
         </div>
 

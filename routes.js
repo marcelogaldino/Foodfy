@@ -1,4 +1,5 @@
 const server = require("express")
+const data = require("./data.json")
 const recipes = require("./data")
 
 const recipe = require("./controllers/recipe.js")
@@ -12,10 +13,12 @@ routes.get("/admin/recipes/:id", recipe.show)
 routes.get("/admin/recipes/:id/edit", recipe.edit)
 
 
-routes.post("/admin/recipes", recipe.post)
+routes.post("/admin/recipes", recipe.post) // Criar uma receita
+routes.put("/admin/recipes", recipe.put) // Editar uma receita
+routes.delete("/admin/recipes", recipe.delete)
 
 routes.get("/", function(req, res) {
-    res.render("home", { items: recipes })
+    res.render("home", { items: data.recipes })
 })
 
 routes.get("/about", function(req, res) {
@@ -23,7 +26,7 @@ routes.get("/about", function(req, res) {
 })
 
 routes.get("/recipes/:index", function(req, res) {
-    const dataRecipes = recipes
+    const dataRecipes = data.recipes
     const recipeIndex = req.params.index
     
     if ( recipeIndex >= dataRecipes.length) {
