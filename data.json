@@ -10,10 +10,11 @@
         "1 colher (sobremesa) de fermento em pó"
       ],
       "prepare": [
-        "No liquidificador bata o leite", 
+        "No liquidificador bata o leite",
         "o ovo",
-        "o sal", "o açúcar", 
-        "a margarina", 
+        "o sal",
+        "o açúcar",
+        "a margarina",
         "a farinha de trigo e o fermento em pó até que tudo esteja encorporado.",
         "Despeje a massa em uma assadeira para pizza untada com margarina e leve ao forno preaquecido por 20 minutos.",
         "Leve novamente ao forno até derreter a mussarela."
@@ -43,7 +44,6 @@
         "Forre uma assadeira de metal com plástico, coloque os hambúrgueres e intercale camadas de carne e plásticos (sem apertar).",
         "Faça no máximo 4 camadas por forma e leve para congelar.",
         "Retire do congelador, frite ou asse e está pronto."
-      
       ],
       "further_information": "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres! \\n\\n Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijom tomates e alface."
     },
@@ -129,6 +129,14 @@
         "açúcar de confeiteiro e corte em quadrados."
       ],
       "further_information": ""
+    },
+    {
+      "recipe_image": "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190703150712_3a5cce71-4170-463c-a9ca-ce55953a8533.jpeg",
+      "title": "Feijoada",
+      "author": "Marcelo Galdino",
+      "ingredients": "Feijao preto,Feijao preto,Feijao preto,Feijao preto,Feijao preto",
+      "prepare": "Feijao preto,Feijao preto,Feijao preto,Feijao preto",
+      "further_information": "Feijao preto"
     }
   ]
 }

@@ -407,19 +407,22 @@ input[type="text"] {
 
 #adicionais {
     height: 257px;
+    width: 940px;
+    outline: none;
+    
 }
 
 input::placeholder {
     font-size: 16px;
     font-weight: normal;
+    cursor: initial;
 }
 
 .details {
     display: block;
 }
 
-.details div:nth-child(2) input[type="text"],
-.details div:nth-child(3) input[type="text"] {
+.details div:nth-child(1n) input[type="text"] {
     margin-bottom: 15px;
 }
 
@@ -430,11 +433,6 @@ input::placeholder {
     color: #6558C3;
     cursor: pointer;
 }
-
-/* .buttonsForm section #put {
-    display: grid;
-    grid-template-columns: 1fr;
-} */
 
 section {
     display: inline-flex;

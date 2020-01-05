@@ -7,13 +7,14 @@ function addIngredient() {
 
     if (newField.children[0].value == "") return false
 
-    newField.children[0].value == ""
+    newField.children[0].value = ""
     ingredients.appendChild(newField)
-
 
 }
 
-document.querySelector(".insert_ingredient").addEventListener("click", addIngredient)
+document
+.querySelector(".insert_ingredient")
+.addEventListener("click", addIngredient)
 
 
 function addPrepare() {
@@ -31,4 +32,6 @@ function addPrepare() {
 
 }
 
-document.querySelector(".insert_prepare").addEventListener("click", addPrepare)
+document
+.querySelector(".insert_prepare")
+.addEventListener("click", addPrepare)
