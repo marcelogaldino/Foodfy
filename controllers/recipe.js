@@ -19,17 +19,9 @@ exports.post = function(req, res) {
 
     }
 
-    const { ingredients, prepare } = req.body
-
-    req.body.ingredients = [ingredients]
-    req.body.prepare = [prepare]
-
     data.recipes.push({
         ...req.body
     })
-
-    console.log("POST")
-
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err)

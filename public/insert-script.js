@@ -26,7 +26,7 @@ function addPrepare() {
 
     if (newField.children[0].value == "") return false
 
-    newField.children[0].value == ""
+    newField.children[0].value = ""
     prepare.appendChild(newField)
 
 

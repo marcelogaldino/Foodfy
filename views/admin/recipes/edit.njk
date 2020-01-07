@@ -52,26 +52,30 @@
 
             <div id=ingredients>
                 <h4>Ingredientes</h4>
-                <div class="add_ingredient">
-                    <input 
-                    type="text"
-                    name="ingredients"
-                    value="{{ item.ingredients }}"
-                    >
-                </div>
+                {% for i in item.ingredients %}
+                    <div class="add_ingredient">
+                        <input 
+                        type="text"
+                        name="ingredients[]"
+                        value="{{ i }}"
+                        >
+                    </div>
+                {% endfor %}
             </div>
-            <a class="insert_ingredient">Adicionar novo ingrediente</a>
 
+            <a class="insert_ingredient">Adicionar novo ingrediente</a>
 
             <div id=prepare>
                 <h4>Modo de preparo</h4>
-                <div class="add_prepare">
-                    <input 
-                    type="text"
-                    name="prepare"
-                    value="{{ item.prepare }}"
-                    >
-                </div>
+                {% for i in item.prepare %}
+                    <div class="add_prepare">
+                        <input 
+                        type="text"
+                        name="prepare[]"
+                        value="{{ i }}"
+                        >
+                    </div>
+                {% endfor %}
             </div>
             <a class="insert_prepare">Novo passo</a>
 
