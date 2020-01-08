@@ -342,7 +342,8 @@ ul {
 /* === ADMIN CREATE === */
 
 .second-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 200px 600px;
 }
 
 .second-header h2 {
@@ -350,7 +351,7 @@ ul {
 }
 
 .primary_button {
-    margin-left: 32px;
+    margin-left: 600px;
     background: #6558C3;
     border-radius: 4px;
     border: none;
@@ -443,7 +444,7 @@ section h2 {
 }
 
 #delete {
-    margin-left: 450px;
+    margin-left: -292px;
 }
 
 #delete button {
@@ -455,3 +456,4 @@ section h2 {
     height: 37px;
     cursor: pointer;
 }
+

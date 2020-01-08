@@ -68,6 +68,17 @@ exports.put = function(req, res) {
 
     let { recipe_image, title, author, ingredients, prepare, further_information } = req.body
 
+    const filteredIngredients = ingredients.filter(function(ingredients){
+        return ingredients != ""
+    })
+
+    const filteredPrepare = prepare.filter(function(prepare){
+        return prepare != ""
+    })
+
+    ingredients = filteredIngredients
+    prepare = filteredPrepare
+
     const recipe = {
         recipe_image,
         title,
@@ -92,9 +103,8 @@ exports.put = function(req, res) {
 exports.delete = function(req, res) {
     const { id } = req.body
 
-    data.recipes.pop(data.recipes[id])
+    data.recipes.splice(id, 1)
 
-   
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) {

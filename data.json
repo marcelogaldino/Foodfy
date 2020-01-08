@@ -132,49 +132,12 @@
     },
     {
       "recipe_image": "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190703150712_3a5cce71-4170-463c-a9ca-ce55953a8533.jpeg",
-      "title": "Feijoada",
-      "author": "Marcelo Galdino",
-      "ingredients": "Feijao preto,Feijao preto,Feijao preto,Feijao preto,Feijao preto",
-      "prepare": "Feijao preto,Feijao preto,Feijao preto,Feijao preto",
-      "further_information": "Feijao preto"
-    },
-    {
-      "recipe_image": "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190703150712_3a5cce71-4170-463c-a9ca-ce55953a8533.jpeg",
-      "title": "Feijoada do Marcelo",
-      "author": "Marcelo Galdino",
-      "ingredients": [
-        [
-          "Feijao preto",
-          "torresmo",
-          "farofa",
-          ""
-        ]
-      ],
-      "prepare": [
-        [
-          "preparo 1",
-          "preparo 2"
-        ]
-      ],
-      "further_information": "Infos adicionais aqui"
-    },
-    {
-      "recipe_image": "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190703150712_3a5cce71-4170-463c-a9ca-ce55953a8533.jpeg",
-      "title": "Minha feijoadaaa",
-      "author": "Marceloooooooo",
-      "ingredients": "Torresmo,Farofa,Feijao",
-      "prepare": "prepare 1,prepare 2,prepare 3",
-      "further_information": "More infos here "
-    },
-    {
-      "recipe_image": "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190703150712_3a5cce71-4170-463c-a9ca-ce55953a8533.jpeg",
-      "title": "Feijoada brasileira",
-      "author": "Marcelog",
+      "title": "aaaa Feijoada",
+      "author": "Marcelo Galdino de Oliveira",
       "ingredients": [
         "ingr 1",
         "ingr 2",
-        "ingr 3",
-        "ingr 4"
+        "ingr 3"
       ],
       "prepare": [
         "prep 1",
@@ -182,7 +145,7 @@
         "prep 3",
         "prep 4"
       ],
-      "further_information": "My infos ---------             "
+      "further_information": "Myyyyy Informations!!"
     }
   ]
 }
