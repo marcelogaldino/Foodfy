@@ -1,7 +1,9 @@
 <p align="center"> 
-    <img src="assets/logo.png">
-    <img src="assets/chef.png">
+    <img src="public\assets/logo.png">
+    <img src="public\assets\chef.png">
 </p>
+
+public\assets\chef.png
 
 <p align="center">
 Foodfy | Learn recipes created by professional chiefs from all over the world!
