@@ -1,0 +1,37 @@
+{% extends 'layout.njk' %}
+
+    {% block head %}
+        <title>Chefs - Foodfy</title>
+    {% endblock head %}
+
+    {% block content %}
+        <div class="admin-chefs">
+            {% for chef in chefs %}
+                <div class="admin-chef" id="{{ chef.id }}">
+                    <div class="admin-chef-image">
+                        <img src="{{ chef.avatar_url }}" alt="{{ chef.name }}">
+                    </div>
+                    <div class="admin-chef-content">
+                        <p class="admin-chef-author">{{ chef.name }}</p>
+                        <p class="total-description">{{ chef.total_recipes }} receitas</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        {# <script>
+            // ACTIVE MENU
+
+            const page = location.pathname
+            const formSearch = document.querySelector('.form-search')
+            const footer = document.querySelector('.footer')
+            console.log(footer)
+
+            if(page.includes('chefs')) {
+                formSearch.style.display = 'none'
+                footer.style.display = 'none'
+            }
+        </script> #}
+        {# <script src="/script.js"></script> #}
+    {% endblock content %}
+        
