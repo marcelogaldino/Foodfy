@@ -1,53 +1,45 @@
 const db = require('../../config/db')
 
 module.exports = {
-    all(callback) {
-        db.query(`
-        SELECT *
-        FROM recipes`, (err, results) => {
-            if(err) throw `Database error ${err}`
+    // all(callback) {
+    //     db.query(`
+    //     SELECT *
+    //     FROM recipes`, (err, results) => {
+    //         if(err) throw `Database error ${err}`
 
-            callback(results.rows)
-        })        
+    //         callback(results.rows)
+    //     })        
+    // },
+
+    show(id) {
+        return db.query(`SELECT *
+            FROM recipes
+            WHERE id = $1`, [id])
     },
 
-    show(id, callback) {
-        db.query(`SELECT *
-        FROM recipes
-        WHERE id = $1`, [id], (err, results) => {
-            if(err) throw `Database error ${err}`
-            
-            callback(results.rows[0])
-        })
-    },
+    // recipesAndChefName(callback) {
+    //     db.query(`
+    //     SELECT recipes.*, chefs.name AS chef_name
+    //     FROM recipes
+    //     LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, (err, results) => {
+    //         if(err) throw `Database error: ${err}`
 
-    recipesAndChefName(callback) {
-        db.query(`
-        SELECT recipes.*, chefs.name AS chef_name
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, (err, results) => {
-            if(err) throw `Database error: ${err}`
+    //         callback(results.rows)
+    //     })
+    // },
 
-            callback(results.rows)
-        })
-    },
-
-    TotalRecipesByChefs(callback) {
+    TotalRecipesByChefs() {
         const query = `
             SELECT chefs.*, count(recipes) AS total_recipes
             FROM chefs
             LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
             GROUP BY chefs.id
         `
-        db.query(query, (err, results) => {
-            if(err) throw `Database error: ${err}`
-
-            callback(results.rows)
-        })
+        return db.query(query)
     },
 
     searchRecipes(params) {
-        const { search, limit, offset, callback } = params
+        const { search, limit, offset } = params
 
         let query = '',
             searchQuery = ''
@@ -76,10 +68,6 @@ module.exports = {
             LIMIT $1 OFFSET $2
         `
 
-        db.query(query, [limit, offset], (err, results) => {
-            if(err) throw `Database error ${err}`
-
-            callback(results.rows)
-        })
+        return db.query(query, [limit, offset])
     }
 }

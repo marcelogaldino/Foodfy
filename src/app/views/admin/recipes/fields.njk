@@ -1,11 +1,22 @@
-<div class="item">
-    <div>Imagem da receita</div>
-    <div>
-        <input 
-            type="text"
-            name="image"
-            value="{{ recipe.image }}"
-        >
+<div class="items">
+    <div id="upload-title">Imagem da receita</div>
+    <div class="photos-layout">
+        <div class="photos-upload">
+            <input 
+                id="photos-input"
+                type="file"
+                name="image"
+                accept="image/*"
+                multiple
+                onchange="PhotosUpload.handleFileInput(event)"
+            >
+            <div class="photo-box">
+                <span class="material-icons">add</span>
+            </div>
+        </div>
+
+        <div class="photos-preview"></div>
+        
     </div>
 </div>
 
@@ -95,8 +106,6 @@
             name="information" 
             cols="30" 
             rows="20"
-        >
-        {{ recipe.information }}
-        </textarea>
+        >{{ recipe.information }}</textarea>
     </div>
 </div>

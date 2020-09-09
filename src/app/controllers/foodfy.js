@@ -1,6 +1,6 @@
 const Foodfy = require('../models/Foodfy')
 
-exports.index = (req, res) => {
+exports.index = async (req, res) => {
     let { search, page, limit } = req.query
 
     page = page || 1
@@ -12,17 +12,21 @@ exports.index = (req, res) => {
         page,
         limit,
         offset,
-        callback(recipes) {
-            const pagination = {
-                total: Math.ceil(recipes[0].total / limit),
-                page
-            }
-
-            return res.render('foodfy/index', { recipes, pagination, search })
-        }
     }
 
-    Foodfy.searchRecipes(params)
+    try {
+        let results = await Foodfy.searchRecipes(params)
+        const recipes = results.rows
+        
+        const pagination = {
+            total: Math.ceil(recipes[0].total / limit),
+            page
+        } 
+
+        return res.render('foodfy/index', { recipes, pagination, search })
+    } catch (error) {
+        throw new Error(error)
+    }
 
 }
 
@@ -30,7 +34,7 @@ exports.about = (req, res) => {
     return res.render('foodfy/about')
 }
 
-exports.recipes = (req, res) => {
+exports.recipes = async (req, res) => {
     let { search, page, limit } = req.query
 
     page = page || 1
@@ -42,39 +46,48 @@ exports.recipes = (req, res) => {
         page,
         limit,
         offset,
-        callback(recipes) {
-            const pagination = {
-                total: Math.ceil(recipes[0].total / limit),
-                page
-            }
-
-            return res.render('foodfy/recipes', { recipes, pagination, search })
-        }
     }
 
-    Foodfy.searchRecipes(params)
+    try {
+        let results = await Foodfy.searchRecipes(params)
+        const recipes = results.rows
+        
+        const pagination = {
+            total: Math.ceil(recipes[0].total / limit),
+            page
+        } 
 
-
-    // Foodfy.recipesAndChefName(recipes => {
-    //     return res.render('foodfy/recipes', { recipes })
-    // })
+        return res.render('foodfy/recipes', { recipes, pagination, search })
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
-exports.show = (req, res) => {
+exports.show = async (req, res) => {
     const { id } = req.params
-    
-    Foodfy.show(id, recipe => {
+
+    try {
+        let results = await Foodfy.show(id)
+        const recipe = results.rows[0]
+
         return res.render('foodfy/recipe', { recipe })
-    })
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
-exports.chefs = (req, res) => {
-    Foodfy.TotalRecipesByChefs(chefs => {
+exports.chefs = async (req, res) => {
+    try {
+        let results = await Foodfy.TotalRecipesByChefs()
+        const chefs = results.rows
+
         return res.render('foodfy/chefs', { chefs })
-    })
+    } catch (error) {
+        throw new Error(error)
+    }
 }
 
-exports.search = (req, res) => {
+exports.search = async (req, res) => {
     let { search, page, limit } = req.query
 
         page = page || 1
@@ -86,15 +99,19 @@ exports.search = (req, res) => {
             page,
             limit,
             offset,
-            callback(recipes) {
-                const pagination = {
-                    total: Math.ceil(recipes[0].total / limit),
-                    page
-                }
-
-                return res.render('foodfy/search', { recipes, pagination, search })
-            }
         }
 
-        Foodfy.searchRecipes(params)
+        try {
+            let results = await Foodfy.searchRecipes(params)
+            const recipes = results.rows
+            
+            const pagination = {
+                total: Math.ceil(recipes[0].total / limit),
+                page
+            } 
+    
+            return res.render('foodfy/search', { recipes, pagination, search })
+        } catch (error) {
+            throw new Error(error)
+        }
 }

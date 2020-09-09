@@ -3,27 +3,24 @@ const { date } = require('../../libs/utils')
 const db = require('../../config/db')
 
 module.exports = {
-    all(callback) {
-        db.query(`
-        SELECT * 
-        FROM recipes`, (err, results) => {
-            if(err) throw `Database error ${err}`
-
-            callback(results.rows)
-        })
+    all() {
+        return db.query(`
+            SELECT * 
+            FROM recipes
+        `)
     },
 
-    show(id, callback) {
-        db.query(`SELECT *
-        FROM recipes
-        WHERE id = $1`, [id], (err, results) => {
-            if(err) throw `Database error ${err}`
+    // show(id, callback) {
+    //     db.query(`SELECT *
+    //     FROM recipes
+    //     WHERE id = $1`, [id], (err, results) => {
+    //         if(err) throw `Database error ${err}`
 
-            callback(results.rows[0])
-        })
-    },
+    //         callback(results.rows[0])
+    //     })
+    // },
 
-    create(data, callback) {
+    create(data) {
         const query = `
             INSERT INTO recipes(
                 chef_id,
@@ -47,14 +44,10 @@ module.exports = {
             data.created_at = date(Date.now())
         ]
 
-        db.query(query, values, (err, results) => {
-            if(err) throw `Database error ${err}`
-
-            callback()
-        })
+        return db.query(query, values)
     },
 
-    update(data, callback) {
+    update(data) {
         const query = `
             UPDATE recipes SET
                 chef_id = ($1),
@@ -76,42 +69,27 @@ module.exports = {
             data.id
         ]
 
-        db.query(query, values, (err, results) => {
-            if(err) throw `Database error ${err}`
-
-            callback()
-        })
+        return db.query(query, values)
     },
 
-    delete(id, callback) {
-        db.query(`
-        DELETE FROM recipes 
-        WHERE id = $1`, [id], (err, results) => {
-            if(err) throw `Database error ${err}`
-
-            callback()
-        })
+    delete(id) {
+        return db.query(`
+            DELETE FROM recipes 
+            WHERE id = $1`, [id])
     },
 
-    recipesAndChefName(id, callback) {
-        db.query(`
-        SELECT recipes.*, chefs.name AS chef_name
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        WHERE recipes.id = $1`, [id], (err, results) => {
-            if(err) throw `Database error: ${err}`
-
-            callback(results.rows[0])
-        })
+    recipesAndChefName(id) {
+        return db.query(`
+            SELECT recipes.*, chefs.name AS chef_name
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE recipes.id = $1`, [id])
     },
 
-    chefs(callback) {
-        db.query(`
-        SELECT *
-        FROM chefs`, (err, results) => {
-            if(err) throw `Database error: ${err}`
-
-            callback(results.rows)
-        })
+    chefs() {
+        return db.query(`
+            SELECT *
+            FROM chefs
+        `)
     }
 }

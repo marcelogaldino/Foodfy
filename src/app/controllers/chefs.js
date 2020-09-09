@@ -1,36 +1,53 @@
 const Chef = require('../models/Chef')
 
-exports.index = (req, res) => {
-    Chef.all(chefs => {
+exports.index = async (req, res) => {
+    try {
+        let results = await Chef.all()
+        const chefs = results.rows
+
         return res.render('admin/chefs/index', { chefs })
-    })
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
 }
 
 exports.create = (req, res) => {
     return res.render('admin/chefs/create')
 }
 
-exports.show = (req, res) => {
+exports.show = async (req, res) => {
     const { id } = req.params
-    
-    Chef.show(id, chef => {
-        Chef.chefRecipes(id, recipes => {
-            Chef.TotalRecipesByChefs(id, recipesByChef => {
-                return res.render('admin/chefs/detail', { chef, recipes, recipesByChef })
-            })
-        })
-    })
+
+    try {
+        let results = await Chef.show(id)
+        const chef = results.rows[0]
+
+        results = await Chef.chefRecipes(id)
+        const recipes = results.rows
+
+        results = await Chef.TotalRecipesByChefs(id)
+        const recipesByChef = results.rows[0]
+
+        return res.render('admin/chefs/detail', { chef, recipes, recipesByChef })
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
 }
 
-exports.edit = (req, res) => {
+exports.edit = async (req, res) => {
     const { id } = req.params
 
-    Chef.show(id, chef => {
+    try {
+        let results = await Chef.show(id)
+        const chef = results.rows[0]
+
         return res.render('admin/chefs/edit', { chef })
-    })
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
 }
 
-exports.post = (req, res) => {
+exports.post = async (req, res) => {
     const keys = Object.keys(req.body)
 
     for (const key of keys) {
@@ -39,34 +56,49 @@ exports.post = (req, res) => {
         }
     }
 
-    Chef.create(req.body, () => {
+    try {
+        await Chef.create(req.body)
+        
         return res.redirect('/admin/chefs')
-    })
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
+
 }
 
-exports.put = (req, res) => {
-    Chef.update(req.body, () => {
+exports.put = async (req, res) => {
+    try {
+        await Chef.update(req.body)
+
         return res.redirect(`/admin/chefs/${req.body.id}`)
-    })
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
 }
 
-exports.delete = (req, res) => {
+exports.delete = async (req, res) => {
     const { id } = req.body
 
-    Chef.TotalRecipesByChefs(id, chef => {
+    try {
+        let results = await Chef.TotalRecipesByChefs(id)
+        const chef = results.rows[0]
         let { total_recipes } = chef
 
         total_recipes = Number(total_recipes)
 
         if (chef.total_recipes <= 0) {
-            Chef.delete(id, () => {
+            try {
+                await Chef.delete(id)
+
                 return res.redirect('/admin/chefs')
-            })
+            } catch (error) {
+                throw new Error(`Database error: ${error}`)
+            }
         } else {
             return res.send("You cannot delete a chef that has recipes!!")
         }
-    
-    })
-
+    } catch (error) {
+        throw new Error(`Database error: ${error}`)
+    }
 }
 
