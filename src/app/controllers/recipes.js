@@ -1,4 +1,5 @@
 const Recipe = require('../models/Recipe')
+const File = require('../models/File')
 
 exports.index = async (req, res) => {
     try {
@@ -60,8 +61,17 @@ exports.post = async (req, res) => {
         }
     }
 
+    // inserir o file_id e recipe_id na tabela recipe_files
+
+    if(req.files.length == 0) {
+        return res.send('Please, send at least one image')
+    }
+
     try {
         await Recipe.create(req.body)
+
+        const filesPromise = req.files.map(file => File.create({...file}))
+        await Promise.all(filesPromise)
 
         return res.redirect('/admin/recipes')
     } catch (error) {
